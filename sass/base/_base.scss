@@ -3,10 +3,23 @@
 ::after {
   box-sizing: border-box;
 }
+
 html {
   font-size: 62.5%;
 }
+
 body {
-    font-size: 1.6rem;
-    font-family: 'Gordita', sans-serif;
+  font-size: 1.6rem;
+  font-family: 'Gordita', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: transparent;
+  border: none;
+  outline: none;
 }

@@ -1,12 +1,16 @@
+%flexItemsCenter {
+    display: flex;
+    align-items: center;
+
+}
+
 .header {
-    background: #EEE;
+    background: var(--header-bg-color);
 }
 
 .top-bar {
-    display: flex;
-    align-items: center;
+    @extend %flexItemsCenter;
     padding: 30px
-
 }
 
 .navbar {
@@ -14,32 +18,28 @@
     margin-right: auto;
 
     &__list {
-        display: flex;
-        align-items: center;
+        @extend %flexItemsCenter;
         gap: 30px
     }
 
     &__link {
+        @extend %flexItemsCenter;
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 1.46;
-        display: flex;
         gap: 6px;
-        /* 146.667% */
     }
 }
 
 .top-act {
-    display: flex;
-    align-items: center;
+    @extend %flexItemsCenter;
     gap: 20px;
 
     &__group {
-        display: flex;
-        justify-content: center;
+        @extend %flexItemsCenter;
         border-radius: 8px;
-        background: #FFF;
-        box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.20);
+        background: var(--top-act-group-bg-color);
+        box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow);
         min-width: 50px;
         height: 50px;
     }
@@ -49,10 +49,10 @@
     }
 
     &__btn {
-        display: flex;
-        align-items: center;
+        @extend %flexItemsCenter;
         padding: 13px 20px;
         gap: 10px;
+        cursor: pointer;
     }
 
     &__title {
@@ -65,6 +65,7 @@
     &__separate {
         width: 1px;
         height: 30px;
+        background: var(--separate-bg);
     }
 
     &__avatar {
@@ -75,6 +76,8 @@
         background: #DFD2FA;
         box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
         display: block;
+        cursor: pointer;
+
     }
 
 }

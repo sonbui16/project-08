@@ -8,21 +8,19 @@
 
 .header {
     background: var(--header-bg-color);
-    // @include abstracts.breakpoint(lg){
-    //     width: 100px;
-    // }
 }
 
 .top-bar {
     @extend %flexItemsCenter;
-    padding: 30px 0 ;
+    padding: 30px 0;
+    position: relative;
     @include abstracts.breakpoint(lg) {
-        padding: 20px 0 ;
+        padding: 20px 0;
     }
     @include abstracts.breakpoint(sm) {
-        padding: 16px 0 ;
+        justify-content: space-between;
+        padding: 16px 0;
     }
-
     &__more {
         display: none;
 
@@ -34,6 +32,7 @@
 
 .navbar {
     margin-left: 144px;
+
     @include abstracts.breakpoint(xl) {
         margin-left: 50px;
     }
@@ -60,6 +59,11 @@
     @extend %flexItemsCenter;
     margin-left: auto;
     gap: 20px;
+
+    @include abstracts.breakpoint(sm) {
+        margin-left: 0;
+
+    }
 
     &__group {
         @extend %flexItemsCenter;

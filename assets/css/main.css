@@ -1212,6 +1212,8 @@ html.dark {
   --top-act-group-shadow: rgba(0, 0, 0, 0.20);
   --separate-bg: #EDEDF6;
   --body-bg: #292E39;
+  --dropdow-bg-color: #yellow;
+  --dropdow-shadow-color: red;
 }
 
 html {
@@ -1277,15 +1279,19 @@ html {
     display: none;
   }
 }
-.navbar__list {
-  gap: 30px;
-}
 .navbar__link {
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.46;
   gap: 6px;
   height: 50px;
+  padding: 0 15px;
+}
+.navbar__item:first-child a {
+  padding-left: 0;
+}
+.navbar__item:last-child a {
+  padding-right: 0;
 }
 .navbar__item:hover .dropdow {
   display: block;

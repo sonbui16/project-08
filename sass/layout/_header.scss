@@ -52,6 +52,10 @@
         font-weight: 500;
         line-height: 1.46;
         gap: 6px;
+        height: 50px;
+    }
+    &__item:hover .dropdow{
+        display: block;
     }
 }
 

@@ -1285,6 +1285,10 @@ html {
   font-weight: 500;
   line-height: 1.46;
   gap: 6px;
+  height: 50px;
+}
+.navbar__item:hover .dropdow {
+  display: block;
 }
 
 .top-act {
@@ -1377,14 +1381,23 @@ html {
 
 .dropdow {
   position: absolute;
-  top: 90px;
   left: 0;
+  padding-top: 54px;
+  display: none;
 }
 .dropdow__inner {
   border-radius: 20px;
   background: var(--dropdow-bg-color);
   box-shadow: 0px 40px 90px 20px var(--dropdow-bg-color);
   padding: 30px;
+  position: relative;
+}
+.dropdow__inner::before {
+  content: url("../icons/dropdow-arrow.svg");
+  position: absolute;
+  top: -13px;
+  left: var(--arrow-left-pos);
+  translate: -50%;
 }
 
 /*# sourceMappingURL=main.css.map */

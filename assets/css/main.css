@@ -1423,7 +1423,7 @@ html {
   position: relative;
 }
 .dropdow .top-menu__main {
-  max-height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
+  height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
   width: var(--main-column-width);
   border-right: 1px solid var(--top-menu-border-color);
   overflow-y: auto;
@@ -1431,6 +1431,9 @@ html {
 .dropdow .menu-column {
   display: flex;
   gap: 14px;
+}
+.dropdow .menu-column + .menu-column {
+  margin-top: var(--inner-padding);
 }
 .dropdow .menu-column__icon {
   position: relative;
@@ -1475,11 +1478,18 @@ html {
   color: #0071dc;
   font-weight: 500;
 }
+.dropdow .menu-column__item:hover .sub-menu {
+  display: grid;
+}
 
 .sub-menu {
   position: absolute;
-  padding-left: 30px;
+  padding-left: var(--inner-padding);
   inset: 0 0 0 var(--main-column-width);
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--inner-padding);
+  overflow-y: auto;
 }
 
 /*# sourceMappingURL=main.css.map */

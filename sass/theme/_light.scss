@@ -1,23 +1,24 @@
-@use '../abstracts';
+@use "../abstracts";
 
 html {
-    --text-color: #1A162E;
-    --icon-color: brightness(0) saturate(100%) invert(5%) sepia(38%) saturate(2921%) hue-rotate(232deg) brightness(92%) contrast(92%);
+  --text-color: #1a162e;
+  --icon-color: brightness(0) saturate(100%) invert(5%) sepia(38%)
+    saturate(2921%) hue-rotate(232deg) brightness(92%) contrast(92%);
 
-    --header-bg-color: #EEE;
-    --body-bg: #f6f6f6;
-    --top-act-group-bg-color: #fff;
-    --top-act-group-shadow: rgba(237, 237, 246, 0.20);
-    --separate-bg: #EDEDF6;
+  --header-bg-color: #eee;
+  --body-bg: #f6f6f6;
+  --top-act-group-bg-color: #fff;
+  --top-act-group-shadow: rgba(237, 237, 246, 0.2);
+  --separate-bg: #ededf6;
+
+  // Dropdow
+  --dropdow-bg-color: #fff;
+  --dropdow-shadow-color: rgba(200, 200, 200, 0.4);
+  --top-menu-border-color: #d2d1d6;
 
 
-
-    // Dropdow
-
-    --dropdow-bg-color: #fff;
-    --dropdow-shadow-color: rgba(200, 200, 200, 0.40);
-
-    @include abstracts.breakpoint(lg) {
-        --header-bg-color: #fff;
-    };
+  @include abstracts.breakpoint(lg) {
+    --header-bg-color: #fff;
+    --header-shadow-color: rgba(237, 237, 462, 0.2);
+  }
 }

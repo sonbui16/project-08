@@ -2,17 +2,17 @@
   position: absolute;
   left: 0;
   padding-top: 54px;
-  display: none;
+  // display: none;
+  width: min(1240px, 100%);
+
   &__inner {
+    --inner-max-height :min(582px, 100vh - 158px);
+    --inner-padding: 30px;
     border-radius: 20px;
     background: var(--dropdow-bg-color);
-    box-shadow: 0px 40px 90px 20px var(--dropdow-bg-color);
-
-//     border-radius: 20px;
-// background: var(--Dark-2, #292E39);
-// box-shadow: 0px 40px 90px 20px rgba(23, 28, 40, 0.40);
-
-    padding: 30px;
+    box-shadow: 0px 40px 90px 20px var(--dropdow-shadow-color);
+    max-height: var(--inner-max-height);
+    padding: var(--inner-padding);
     position: relative;
     &::before {
       content: url("../icons/dropdow-arrow.svg");
@@ -20,6 +20,64 @@
       top: -13px;
       left: var(--arrow-left-pos);
       translate: -50%;
+      filter: var(--dropdow-arrow-color);
+    }
+  }
+  .top-menu {
+    max-height: calc( var(--inner-max-height) - var(--inner-padding) * 2);
+    &__main {
+      max-height: inherit;
+      width: 292px;
+      border-right: 1px solid var(--top-menu-border-color);
+      overflow-y: auto;
+    }
+  }
+  .menu-column {
+    display: flex;
+    gap: 14px;
+    &__icon {
+      position: relative;
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+    }
+    &__content {
+      flex: 1;
+    }
+    &__icon-1 {
+      width: 30px;
+      height: 30px;
+      object-fit: cover;
+    }
+    &__icon-2 {
+      width: 24px;
+      height: 24px;
+      object-fit: cover;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      filter: var(--menu-column-icon-color);
+    }
+    &__heading {
+      margin-top: 4px;
+      // font-family: Gordita;
+      font-size: 1.6rem;
+      font-weight: 500;
+      line-height: 1.5; /* 150% */
+    }
+    &__list {
+      margin-top: 19px;
+    }
+    &__link {
+      display: inline-block;
+      padding: 7px 0;
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 1.42; /* 142.857% */
+      &:hover {
+        color: #0071dc;
+        font-weight: 500;
+      }
     }
   }
 }

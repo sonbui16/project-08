@@ -6,12 +6,10 @@
   width: min(1240px, 100%);
 
   &__inner {
-    --inner-max-height :min(582px, 100vh - 158px);
     --inner-padding: 30px;
     border-radius: 20px;
     background: var(--dropdow-bg-color);
     box-shadow: 0px 40px 90px 20px var(--dropdow-shadow-color);
-    max-height: var(--inner-max-height);
     padding: var(--inner-padding);
     position: relative;
     &::before {
@@ -24,10 +22,11 @@
     }
   }
   .top-menu {
-    max-height: calc( var(--inner-max-height) - var(--inner-padding) * 2);
+    --main-column-width: 292px;
+    position: relative;
     &__main {
-      max-height: inherit;
-      width: 292px;
+      max-height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
+      width: var(--main-column-width);
       border-right: 1px solid var(--top-menu-border-color);
       overflow-y: auto;
     }
@@ -80,4 +79,11 @@
       }
     }
   }
+}
+.sub-menu {
+  position: absolute;
+  padding-left: 30px;
+  // background: red;
+
+  inset: 0 0 0 var(--main-column-width);
 }

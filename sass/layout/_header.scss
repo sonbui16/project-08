@@ -1,146 +1,175 @@
-@use '../abstracts';
+@use "../abstracts";
 
 %flexItemsCenter {
-    display: flex;
-    align-items: center;
-
+  display: flex;
+  align-items: center;
 }
 
 .header {
-    background: var(--header-bg-color);
-    @include abstracts.breakpoint(lg) {
-        box-shadow:0px 20px 60px 10px var(--header-shadow-color);
-    }
+  background: var(--header-bg-color);
+  @include abstracts.breakpoint(lg) {
+    box-shadow: 0px 20px 60px 10px var(--header-shadow-color);
+  }
 }
 
 .top-bar {
-    @extend %flexItemsCenter;
-    padding: 30px 0;
-    position: relative;
+  @extend %flexItemsCenter;
+  padding: 30px 0;
+  position: relative;
 
-    @include abstracts.breakpoint(lg) {
-        padding: 20px 0;
-    }
+  @include abstracts.breakpoint(lg) {
+    padding: 20px 0;
+  }
 
-    @include abstracts.breakpoint(md) {
-        justify-content: space-between;
-        padding: 16px 0;
-    }
+  @include abstracts.breakpoint(md) {
+    justify-content: space-between;
+    padding: 16px 0;
+  }
 
-    &__more {
-        display: none;
 
-        @include abstracts.breakpoint(lg) {
-            display: block
-        }
-    }
 }
 
 .navbar {
-    margin-left: 129px;
+  margin-left: 129px;
+  @include abstracts.breakpoint(xl) {
+    margin-left: 50px;
+  }
+  @include abstracts.breakpoint(lg) {
+  
+    position: fixed;
+    inset: 0 50% 0 0;
+    background: #fff;
+    margin-left: 0;
+    z-index: 9;
+    padding: 20px 0;
+    translate: -100%;
+    transition: translate 0.5s;
+    &.show {
+      translate: 0;
+    }
+    &.show ~ &__overlay {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  &__overlay {
+    visibility: hidden;
+    opacity: 0;
+    @include abstracts.breakpoint(lg) {
+      //   visibility: visible;
+      //   opacity: 1;
+      background: rgba($color: #000000, $alpha: 0.5);
+      position: fixed;
+      inset: 0;
+      z-index: 8;
+      transition: opacity, visibility;
+      transition-duration: 0.5s;
+    }
+  }
+  &__list {
+    @extend %flexItemsCenter;
+    @include abstracts.breakpoint(lg) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    // gap: 30px
+  }
 
-    @include abstracts.breakpoint(xl) {
-        margin-left: 50px;
+  &__link {
+    @extend %flexItemsCenter;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.46;
+    gap: 6px;
+    height: 50px;
+    padding: 0 15px;
+    @include abstracts.breakpoint(lg) {
+      padding: 0 40px;
+      font-size: 1.6rem;
+      font-weight: 500;
+      line-height: 150%; /* 150% */
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    &:hover .dropdow {
+      display: block;
     }
 
     @include abstracts.breakpoint(lg) {
-        display: none
-    }
-
-    &__list {
-        @extend %flexItemsCenter;
-        // gap: 30px
-    }
-
-    &__link {
-        @extend %flexItemsCenter;
-        font-size: 1.5rem;
-        font-weight: 500;
-        line-height: 1.46;
-        gap: 6px;
-        height: 50px;
-        padding: 0 15px;
-    }
-
-    &__item {
-        // &:first-child a {
-        //     padding-left: 0;
-        // }
-        // &:last-child a {
-        //     padding-right: 0;
-        // }
         &:hover .dropdow {
-            display: block;
-        }
-
+            display: none;
+          }
+      width: 100%;
     }
+  }
 
+  &__close-btn {
+    display: none;
+    @include abstracts.breakpoint(lg) {
+      display: block;
+      padding: 10px 40px;
+    }
+  }
 }
 
 .top-act {
+  @extend %flexItemsCenter;
+  margin-left: auto;
+  gap: 20px;
+
+  @include abstracts.breakpoint(md) {
+    margin-left: 0;
+  }
+
+  &__group {
     @extend %flexItemsCenter;
-    margin-left: auto;
-    gap: 20px;
+    border-radius: 8px;
+    background: var(--top-act-group-bg-color);
+    box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow);
+    min-width: 50px;
+    height: 50px;
+  }
 
-    @include abstracts.breakpoint(md) {
-        margin-left: 0;
-
+  &__group--single {
+    @include abstracts.breakpoint(lg) {
+      display: none;
     }
+  }
 
-    &__group {
-        @extend %flexItemsCenter;
-        border-radius: 8px;
-        background: var(--top-act-group-bg-color);
-        box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow);
-        min-width: 50px;
-        height: 50px;
+  &__group--single &__btn {
+    padding: 13px;
+  }
 
-        @include abstracts.breakpoint(md) {
-            display: none
-        }
+  &__btn {
+    @extend %flexItemsCenter;
+    padding: 13px 20px;
+    gap: 10px;
+    cursor: pointer;
+  }
 
-    }
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.46;
+    /* 146.667% */
+  }
 
-    &__group--single {
-        @include abstracts.breakpoint(lg) {
-            display: none
-        }
-    }
+  &__separate {
+    width: 1px;
+    height: 30px;
+    background: var(--separate-bg);
+  }
 
-    &__group--single &__btn {
-        padding: 13px;
-    }
-
-    &__btn {
-        @extend %flexItemsCenter;
-        padding: 13px 20px;
-        gap: 10px;
-        cursor: pointer;
-    }
-
-    &__title {
-        font-size: 1.5rem;
-        font-weight: 500;
-        line-height: 1.46;
-        /* 146.667% */
-    }
-
-    &__separate {
-        width: 1px;
-        height: 30px;
-        background: var(--separate-bg);
-    }
-
-    &__avatar {
-        width: 50px;
-        height: 50px;
-        object-fit: cover;
-        border-radius: 8px;
-        background: #DFD2FA;
-        box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
-        display: block;
-        cursor: pointer;
-
-    }
-
+  &__avatar {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #dfd2fa;
+    box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
+    display: block;
+    cursor: pointer;
+  }
 }

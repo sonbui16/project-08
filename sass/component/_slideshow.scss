@@ -1,0 +1,32 @@
+.slideshow {
+  padding: 40px 0;
+  position: relative;
+  &__inner {
+    display: flex;
+    overflow: hidden;
+  }
+  &__item {
+    width: 100%;
+    flex-shrink: 0;
+  }
+  &__img {
+    width: 100%;
+  }
+  &__page {
+    position: absolute;
+    bottom: 100px;
+    left: 100px;
+    display: flex;
+  }
+  &__slider {
+    width: 184px;
+    height: 4px;
+    background: red;
+  }
+  &__num {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 144.444%; /* 144.444% */
+  }
+}

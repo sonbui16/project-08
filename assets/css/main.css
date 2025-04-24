@@ -1630,4 +1630,37 @@ html {
   overflow-y: auto;
 }
 
+.slideshow {
+  padding: 40px 0;
+  position: relative;
+}
+.slideshow__inner {
+  display: flex;
+  overflow: hidden;
+}
+.slideshow__item {
+  width: 100%;
+  flex-shrink: 0;
+}
+.slideshow__img {
+  width: 100%;
+}
+.slideshow__page {
+  position: absolute;
+  bottom: 100px;
+  left: 100px;
+  display: flex;
+}
+.slideshow__slider {
+  width: 184px;
+  height: 4px;
+  background: red;
+}
+.slideshow__num {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 144.444%; /* 144.444% */
+}
+
 /*# sourceMappingURL=main.css.map */
